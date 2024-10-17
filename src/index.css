@@ -1,68 +1,190 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --border-color: #07e012;
+  --background-dark: #2e4053;
+  --background-light: #99ffcc;
+  --color-light: #ecf0f1;
+  --color-dark: #212f3c;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-light);
+  color: var(--background-dark);
+}
+
+button,
+input {
+  border: none;
+}
+
+header {
+  width: 100%;
+  height: 39px;
+  margin-top: 0;
+  background-color: var(--background-dark);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#brand {
+  padding-left: 2rem;
+  color: var(--color-light);
+  width: 40%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+#brand h1 {
+  margin: 0;
+}
+
+#nav {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+#nav div a {
+  margin-right: 2rem;
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#board {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 32px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  list-style: none;
+  display: flex;
+  white-space: nowrap;
+  align-items: flex-start;
+  scrollbar-color: auto;
+  scrollbar-width: auto;
+}
+
+#btn-add-card {
+  padding: 1rem;
+  background-color: var(--background-dark);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px 0 0 10px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.custom-icons {
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+.card {
+  width: 240px;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  margin: 10px;
+  display: inline-block;
+}
+
+.card-title {
+  margin: 10px;
+}
+
+.input-field {
+  width: 66%;
+  height: 26px;
+  border-radius: 6px;
+  margin: 6px 0;
+  padding-right: 1rem;
+}
+
+.input-textarea {
+  width: 80%;
+  height: 6rem;
+  border-radius: 6px;
+  margin: 6px 0;
+}
+
+.sheet {
+  font-size: 0.9rem;
+  text-align: left;
+  padding-left: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.sheet-icon {
+  float: right;
+  padding-right: 1rem;
+  cursor: pointer;
+  color: var(--background-dark);
+}
+
+.close-icon {
+  background-color: var(--background-light);
+  float: right;
+  padding-right: 1rem;
+  cursor: pointer;
+  color: var(--background-dark);
+  font-size: 1.4rem;
+  padding-top: 0.35rem;
+}
+
+.add-sheet {
+  height: 34px;
+  background-color: var(--background-dark);
+  display: flex;
+}
+
+.add-sheet button {
+  background-color: var(--background-dark);
+  border: none;
+  color: var(--color-light);
+  font-size: 0.8rem;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 1rem;
+}
+
+.card-dashboard {
+  width: 250px;
+  height: 100px;
+  background-color: var(--background-dark);
+  color: var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.default-button {
+  padding: 8px 16px;
+  margin: 8px auto;
+  background-color: var(--background-dark);
+  cursor: pointer;
+  color: var(--color-light);
+  border-radius: 4px;
+}
+
+.btn-sheet {
+  padding: 6px;
+  background-color: var(--background-dark);
+  border-radius: 4px;
+  color: var(--color-light);
+  margin: 8px 0;
+  text-align: left;
+  cursor: pointer;
 }
