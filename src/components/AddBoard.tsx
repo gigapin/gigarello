@@ -1,24 +1,24 @@
 import Card from "./Card.tsx";
 import InputType from "./InputType.tsx";
-import Button from "./Button.tsx";
 import InputTextarea from "./InputTextarea.tsx";
 import React from "react";
 
 interface Props {
-    handleAddBoard: () => void;
+    handleAddBoard: (event: React.FormEvent<HTMLFormElement>) => void;
     handleTitleBoard: React.RefObject<HTMLInputElement>;
-    handleDescriptionBoard: React.RefObject<HTMLInputElement>;
+    handleDescriptionBoard: React.RefObject<HTMLTextAreaElement>;
 }
 
 const AddBoard: React.FC<Props> = (props) => {
 
-
   return (
-    <Card title="Add Board">
-      <InputType label="Enter Board Name" handleChange={() => props.handleTitleBoard} />
-      <InputTextarea label="Enter a description" handleChange={() => props.handleDescriptionBoard} />
-      <Button label="Create" handleClick={props.handleAddBoard} />
-    </Card>
+    <form onSubmit={props.handleAddBoard}>
+      <Card title="Add Board" styles={{ backgroundColor: "white", padding: 16 }}>
+        <InputType label="Enter Board Name" handleChange={props.handleTitleBoard} />
+        <InputTextarea label="Enter a description" handleChange={props.handleDescriptionBoard} />
+        <input type='submit' value="Add Board" />
+      </Card>
+    </form>
   )
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 interface Props {
     label: string;
-    handleChange: () => void;
+    handleChange: React.RefObject<HTMLTextAreaElement>;
 }
 
 const InputTextarea: React.FC<Props> = ({ label, handleChange }) => {
@@ -10,7 +10,7 @@ const InputTextarea: React.FC<Props> = ({ label, handleChange }) => {
 
   return (
     <div>
-        <label htmlFor="">{label}</label>
+      <label htmlFor={label}>{label}</label>
       <textarea
         className={classes}
         ref={handleChange}

@@ -1,12 +1,13 @@
 import React from 'react';
 
 interface InputTypeProps {
-    label?: string;
-    type?: 'text' | string;
-    handleChange: (value: any) => void;
+  label?: string;
+  type?: 'text' | string;
+  handleChange: React.RefObject<HTMLInputElement>;
 }
 
-const InputType: React.FC<InputTypeProps> = ({label, type = 'text', handleChange}) => {
+export const InputType: React.FC<InputTypeProps> = ({label, type = 'text', handleChange}) => {
+
   return (
     <div>
       <p>

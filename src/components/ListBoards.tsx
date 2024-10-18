@@ -10,7 +10,7 @@ import AddList from "./AddList.tsx";
     return (
       boards.map((board) => (
         <div className="card-dashboard" key={board.id} onClick={handleClick}>
-          <h4 className="card-title">{board.title}</h4>
+          <h4 className="card-title">{board.name}</h4>
           <p>{board.description}</p>
         </div>
       ))
